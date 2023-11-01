@@ -1364,7 +1364,7 @@
         <script src="../js/settings.js"></script>
         <script src="../js/gleek.js"></script>
         <script src="../js/styleSwitcher.js"></script>
-        <script src="../js/invoice.js"></script>
+        <script src="../js/invoice.js" defer></script>
 
     </form>
 </body>
