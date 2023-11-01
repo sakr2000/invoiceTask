@@ -67,6 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\invoices.mdf" />
+    <Content Include="App_Data\invoices_log.ldf">
+      <DependentUpon>invoices.mdf</DependentUpon>
+    </Content>
     <Content Include="assets\images\avatar\1.png" />
     <Content Include="assets\images\avatar\10.png" />
     <Content Include="assets\images\avatar\2.jpg" />

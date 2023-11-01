@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/main/template/mainDashboard.Master" AutoEventWireup="true" CodeBehind="invoice-create.aspx.cs" Inherits="invoice_task.main.template.WebForm1" %>
+﻿<%@ Page Title="invoice" Language="C#" MasterPageFile="~/main/template/mainDashboard.Master" AutoEventWireup="true" CodeBehind="invoice-create.aspx.cs" Inherits="invoice_task.main.template.WebForm1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -13,8 +13,6 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a>
                         </li>
-                        <!-- <li class="breadcrumb-item"><a href="javascript:void(0)">Pages</a>
-                    </li> -->
                         <li class="breadcrumb-item active">Create Invoice</li>
                     </ol>
                 </div>
@@ -52,11 +50,11 @@
                                                     <td class="muted-text">item 1</td>
 
                                                     <td class="muted-text">
-                                                        <input style="text-align: center;" value="1" type="number">
+                                                        <input runat="server" id="quantity1" style="text-align: center;" value="1" type="number">
 
                                                     </td>
                                                     <td class="muted-text">
-                                                        <input style="text-align: center;" value="1" type="number"></td>
+                                                        <input runat="server" id="price1" step="0.01" style="text-align: center;" value="1" type="number"></td>
                                                     <td class="text-primary"><span>0.00</span></td>
                                                 </tr>
                                                 <tr>
@@ -66,10 +64,10 @@
 
 
                                                     <td class="muted-text">
-                                                        <input style="text-align: center;" value="1" type="number">
+                                                        <input runat="server" id="quantity2" style="text-align: center;" value="1" type="number">
                                                     </td>
                                                     <td class="muted-text">
-                                                        <input style="text-align: center;" value="1" type="number"></td>
+                                                        <input runat="server" id="price2" step="0.01" style="text-align: center;" value="1" type="number"></td>
                                                     <td class="text-primary"><span>1.00</span></td>
                                                 </tr>
                                                 <tr>
@@ -79,10 +77,10 @@
 
 
                                                     <td class="muted-text">
-                                                        <input style="text-align: center;" value="1" type="number">
+                                                        <input runat="server" id="quantity3" style="text-align: center;" value="1" type="number">
                                                     </td>
                                                     <td class="muted-text">
-                                                        <input style="text-align: center;" value="1" type="number"></td>
+                                                        <input runat="server" id="price3" step="0.01" style="text-align: center;" value="1" type="number"></td>
                                                     <td class="text-primary"><span>2.20</span></td>
                                                 </tr>
 

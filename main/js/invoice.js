@@ -5,8 +5,10 @@ let itemContainer = document.getElementById("itemContainer");
 
 // calculate the total on input change
 itemContainer.querySelectorAll("tr").forEach((element) => {
-    if (element.querySelectorAll("td input").length == 3) {
-        element.querySelectorAll("td input")[1].addEventListener("input", (e) => {
+    let inputElements = element.querySelectorAll("td input");
+
+    if (inputElements.length == 3) {
+        inputElements[1].addEventListener("input", (e) => {
             // only allow positive values
             if (e.target.value >= 0) {
                 calculateTotal()
@@ -14,7 +16,7 @@ itemContainer.querySelectorAll("tr").forEach((element) => {
                 e.target.value = ''
             }
         });
-        element.querySelectorAll("td input")[2].addEventListener("input", (e) => {
+        inputElements[2].addEventListener("input", (e) => {
             if (e.target.value >= 0) {
                 calculateTotal()
             } else {
@@ -24,13 +26,15 @@ itemContainer.querySelectorAll("tr").forEach((element) => {
     }
 });
 
+// calculate total for each row
 function calculateTotal() {
     itemContainer.querySelectorAll("tr").forEach((element) => {
-        if (element.querySelectorAll("td input").length == 3) {
-            let quantity = element.querySelectorAll("td input")[1].value;
-            let price = element.querySelectorAll("td input")[2].value;
+        let inputElements = element.querySelectorAll("td input");
+        if (inputElements.length == 3) {
+            let quantity = inputElements[1].value;
+            let price = inputElements[2].value;
 
-            element.querySelector("td span").innerText = quantity * price == 'NaN' ? "0.00" : (quantity * price).toFixed(2) ;
+            element.querySelector("td span").innerText = (quantity * price).toFixed(2) ;
             
         }
 
@@ -53,11 +57,11 @@ function getBillTotal() {
 // Delete checked rows from html
 deleteSelectedBtn.addEventListener("click", (e) => {
     e.preventDefault();
-itemContainer.querySelectorAll("tr td input[type='checkbox']").forEach(element => {
-    if (element.checked) {
-        element.parentElement.parentElement.remove();
-        getBillTotal();
-    }
-});
+    itemContainer.querySelectorAll("tr td input[type='checkbox']").forEach(element => {
+        if (element.checked) {
+            element.parentElement.parentElement.remove();
+            getBillTotal();
+        }
+    });
     
 });
