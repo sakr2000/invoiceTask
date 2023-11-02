@@ -59,13 +59,19 @@ namespace invoice_task.main.template
 
         protected void saveDbBtn_Click(object sender, EventArgs e)
         {
+            // clear the table data 
             ClearTableData("pill");
+
+            string[] deletedItems = deletedRows.Value.Split(',');
             // loop on table rows except first and last
             for (int i = 1; i < table.Rows.Count - 1; i++)
             {
                 HtmlTableRow row = table.Rows[i];
                 // get data
                 string itemName = row.Cells[1].InnerText;
+
+                // check if item was deleted in client side
+                if (Array.IndexOf(deletedItems, itemName) >= 0) continue;
 
                 HtmlInputGenericControl quantityInput = row.Cells[2].Controls.OfType<HtmlInputGenericControl>().FirstOrDefault(); 
                 string quantity = quantityInput.Value;

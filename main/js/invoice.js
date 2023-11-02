@@ -55,12 +55,15 @@
     // Delete checked rows from html
     deleteSelectedBtn.addEventListener("click", (e) => {
         e.preventDefault();
+        let deletedRows = [];
         itemContainer.querySelectorAll("tr td input[type='checkbox']").forEach(element => {
             if (element.checked) {
+                deletedRows.push(element.parentElement.nextElementSibling.innerText);
                 element.parentElement.parentElement.remove();
                 getBillTotal();
             }
         });
+        document.getElementById('deletedRows').value = deletedRows.join(',');
     });
    
 });

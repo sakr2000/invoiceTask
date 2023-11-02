@@ -24,6 +24,15 @@ namespace invoice_task.main.template
         protected global::System.Web.UI.WebControls.Button saveDbBtn;
 
         /// <summary>
+        /// deletedRows control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden deletedRows;
+
+        /// <summary>
         /// table control.
         /// </summary>
         /// <remarks>

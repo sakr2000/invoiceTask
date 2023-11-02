@@ -33,6 +33,7 @@
                             <div class="row mt-5">
                                 <div class="col-lg-12">
                                     <div class="create-invoice-table table-responsive">
+                                        <input type="hidden" id="deletedRows" runat="server" ClientIDMode="Static" />
                                         <table runat="server" id="table" class="table invoice-details-table"  style="min-width: 620px;">
                                             <thead>
                                                 <tr>
@@ -43,7 +44,7 @@
                                                     <th>Total</th>
                                                 </tr>
                                             </thead>
-                                            <tbody id="itemContainer" >
+                                            <tbody >
                                                 <tr>
                                                     <td>
                                                         <input type="checkbox" /></td>
