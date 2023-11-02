@@ -33,7 +33,7 @@
                             <div class="row mt-5">
                                 <div class="col-lg-12">
                                     <div class="create-invoice-table table-responsive">
-                                        <table class="table invoice-details-table" style="min-width: 620px;">
+                                        <table runat="server" id="table" class="table invoice-details-table"  style="min-width: 620px;">
                                             <thead>
                                                 <tr>
                                                     <th>Manage</th>
@@ -43,18 +43,18 @@
                                                     <th>Total</th>
                                                 </tr>
                                             </thead>
-                                            <tbody id="itemContainer">
+                                            <tbody id="itemContainer" >
                                                 <tr>
                                                     <td>
                                                         <input type="checkbox" /></td>
                                                     <td class="muted-text">item 1</td>
 
                                                     <td class="muted-text">
-                                                        <input runat="server" id="quantity1" style="text-align: center;" value="1" type="number">
+                                                        <input runat="server" style="text-align: center;" value="1" type="number">
 
                                                     </td>
                                                     <td class="muted-text">
-                                                        <input runat="server" id="price1" step="0.01" style="text-align: center;" value="1" type="number"></td>
+                                                        <input runat="server" step="0.01" style="text-align: center;" value="1" type="number"></td>
                                                     <td class="text-primary"><span>0.00</span></td>
                                                 </tr>
                                                 <tr>
@@ -64,10 +64,10 @@
 
 
                                                     <td class="muted-text">
-                                                        <input runat="server" id="quantity2" style="text-align: center;" value="1" type="number">
+                                                        <input runat="server" style="text-align: center;" value="1" type="number">
                                                     </td>
                                                     <td class="muted-text">
-                                                        <input runat="server" id="price2" step="0.01" style="text-align: center;" value="1" type="number"></td>
+                                                        <input runat="server" step="0.01" style="text-align: center;" value="1" type="number"></td>
                                                     <td class="text-primary"><span>1.00</span></td>
                                                 </tr>
                                                 <tr>
@@ -77,19 +77,44 @@
 
 
                                                     <td class="muted-text">
-                                                        <input runat="server" id="quantity3" style="text-align: center;" value="1" type="number">
+                                                        <input runat="server" style="text-align: center;" value="1" type="number">
                                                     </td>
                                                     <td class="muted-text">
-                                                        <input runat="server" id="price3" step="0.01" style="text-align: center;" value="1" type="number"></td>
+                                                        <input runat="server" step="0.01" style="text-align: center;" value="1" type="number"></td>
                                                     <td class="text-primary"><span>2.20</span></td>
                                                 </tr>
+                                                                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox" /></td>
+                                                    <td class="muted-text">item 4</td>
 
+
+                                                    <td class="muted-text">
+                                                        <input runat="server"  style="text-align: center;" value="1" type="number">
+                                                    </td>
+                                                    <td class="muted-text">
+                                                        <input runat="server" step="0.01" style="text-align: center;" value="1" type="number"></td>
+                                                    <td class="text-primary"><span>2.20</span></td>
+                                                </tr>
+                                                                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox" /></td>
+                                                    <td class="muted-text">item 5</td>
+
+
+                                                    <td class="muted-text">
+                                                        <input runat="server"  style="text-align: center;" value="1" type="number">
+                                                    </td>
+                                                    <td class="muted-text">
+                                                        <input runat="server"  step="0.01" style="text-align: center;" value="1" type="number"></td>
+                                                    <td class="text-primary"><span>2.20</span></td>
+                                                </tr>
                                                 <tr>
                                                     <td></td>
                                                     <td></td>
                                                     <td></td>
                                                     <td>Net</td>
-                                                    <td class="text-primary" id="netValue"><span>0.000</span></td>
+                                                    <td class="text-primary" id="netValue" ClientIDMode="Static"><span>0.000</span></td>
                                                 </tr>
 
 
